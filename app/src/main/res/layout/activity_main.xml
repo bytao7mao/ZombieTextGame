@@ -7,33 +7,36 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/newGamebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Game"
-        android:id="@+id/newGamebtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/tvStatus"
-        android:layout_alignParentLeft="true" />
+        android:text="New Game" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="About"
+        android:text="About us"
         android:id="@+id/btn2"
         android:layout_below="@+id/newGamebtn"
         android:layout_alignParentLeft="true" />
 
     <TextView
+        android:id="@+id/tvStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="(status)"
-        android:id="@+id/tvStatus"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editTxt"
+        android:text="(status)"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:layout_width="match_parent"
@@ -57,9 +60,8 @@
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/btnPromo"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="91dp"
         android:background="@android:color/white"
         android:gravity="center"
         android:hint="Your Name Here"
