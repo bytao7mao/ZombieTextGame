@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "404684018017",
+    "firebase_url": "https://zombiegametao.firebaseio.com",
+    "project_id": "zombiegametao",
+    "storage_bucket": "zombiegametao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404684018017:android:c591882eaf18c346",
+        "android_client_info": {
+          "package_name": "com.example.marius.zombiegame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404684018017-5r7arkq33ai4ev1krufv4tv6ee242dt8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.marius.zombiegame",
+            "certificate_hash": "1d52afd47d2f11ff75d20fbb4f1ec2a1cadb75c5"
+          }
+        },
+        {
+          "client_id": "404684018017-787npi0ui88l1n43p58ejcjidote6nb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1S16MAMIKooA3rpK8bvAMTl8nnPZeJds"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404684018017-787npi0ui88l1n43p58ejcjidote6nb8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
