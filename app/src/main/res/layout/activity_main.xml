@@ -73,7 +73,7 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/common_google_signin_btn_text_dark"
         android:gravity="center"
         android:hint="Your Name Here"
         android:inputType="textCapWords" />

@@ -147,16 +147,16 @@ public class MainActivity extends AppCompatActivity
 //                break;
             case R.id.btn2:
                 btnName = "Button2Click";
-                setStatus("btn2 clicked");
+              //  setStatus("btn2 clicked");
                 break;
             case R.id.btnAuthActivity:
                 btnName = "ButtonAuthClick";
-                setStatus("btnAuthActivity clicked");
+              //  setStatus("btnAuthActivity clicked");
                 startActivity(new Intent(this, SignInActivity.class));
                 break;
             case R.id.btnPromo:
                 btnName = "ButtonPromoClick";
-                setStatus("btnPromo clicked");
+             //   setStatus("btnPromo clicked");
                 startActivity(new Intent(this, PromoScreen.class));
                 break;
             default:
@@ -170,8 +170,8 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void setStatus(String text) {
-        TextView tvStat = (TextView)findViewById(R.id.tvStatus);
-        tvStat.setText(text);
-    }
+//    private void setStatus(String text) {
+//        TextView tvStat = (TextView)findViewById(R.id.tvStatus);
+//        tvStat.setText(text);
+//    }
 }
