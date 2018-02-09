@@ -3,8 +3,8 @@ A mini project, coded in java, the initial idea is to create a funny game based 
 ![1496696141832630705](https://user-images.githubusercontent.com/28831190/34465718-60310bbe-eec2-11e7-8987-5f26fee7721c.jpg)
 
 ### the app right now:
-<br><img width="500" src="assets/pic1.jpg" alt="planning picture" />
-<br><img width="500" src="assets/pic2.jpg" alt="planning picture" />
+<br><img width="300" src="assets/pic1.jpg" alt="planning picture" />
+<br><img width="300" src="assets/pic2.jpg" alt="planning picture" />
 
 ### the plan
 
