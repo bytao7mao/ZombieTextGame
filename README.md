@@ -1,3 +1,9 @@
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![Build status](https://ci.appveyor.com/api/projects/status/pjxh5g91jpbh7t84?svg=true)](https://ci.appveyor.com/project/tygerbytes/resourcefitness)
+[![Coveralls](https://coveralls.io/repos/github/tygerbytes/ResourceFitness/badge.svg?branch=master)](https://coveralls.io/github/tygerbytes/ResourceFitness?branch=master)
+
+
+
 # ZombieTextGame
 A mini project, coded in java, the initial idea is to create a funny game based on text.
 ![1496696141832630705](https://user-images.githubusercontent.com/28831190/34465718-60310bbe-eec2-11e7-8987-5f26fee7721c.jpg)
