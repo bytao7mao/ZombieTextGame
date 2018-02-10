@@ -20,3 +20,6 @@ A mini project, coded in java, the initial idea is to create a funny game based 
 
  ### here is the model:
  <br><img width="500" src="assets/plan.jpg" alt="planning picture" />
+ 
+ 
+ <br><img width="300" src="assets/code.jpg" alt="planning picture" />
