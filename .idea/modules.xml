@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ZombieGame.iml" filepath="$PROJECT_DIR$/ZombieGame.iml" />
-      <module fileurl="file://F:\updatedZombie\ZombieGame.iml" filepath="F:\updatedZombie\ZombieGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZombieTextGame.iml" filepath="$PROJECT_DIR$/ZombieTextGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Mariu\Desktop\ZombieGame\updatedZombie.iml" filepath="C:\Users\Mariu\Desktop\ZombieGame\updatedZombie.iml" />
     </modules>
   </component>
 </project>

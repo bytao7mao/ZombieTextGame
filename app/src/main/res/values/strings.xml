@@ -4,5 +4,10 @@
         qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores
         et quas molestias excepturi sint, obcaecati cupiditate non-provident, similiq
         ue sunt in culpa.</string>
+    <!--Options activity buttons-->
+    <string name="music_selection_button">Music select</string>
+    <string name="music_volume_button">Music volume</string>
+    <string name="about_button">About</string>
+    <string name="credits_button">Credits</string>
 
 </resources>

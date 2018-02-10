@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="@dimen/activity_vertical_margin">
+
+
+    <Button
+        android:id="@+id/musicSelectButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/buttonBackground"
+        android:text="@string/music_selection_button"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/musicVolumeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/musicSelectButton"
+        android:background="@color/buttonBackground"
+        android:text="@string/music_volume_button"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/aboutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/musicVolumeButton"
+        android:background="@color/buttonBackground"
+        android:text="@string/about_button"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/creditsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutButton"
+        android:background="@color/buttonBackground"
+        android:text="@string/credits_button"
+        android:textColor="@color/colorAccent" />
+
+</RelativeLayout>
