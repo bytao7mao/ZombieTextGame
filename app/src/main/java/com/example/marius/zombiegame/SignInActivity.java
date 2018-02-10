@@ -158,7 +158,7 @@ public class SignInActivity extends AppCompatActivity
                         if (task.isSuccessful()){
                             FirebaseUser user = task.getResult().getUser();
                             user.getEmail();
-                            sendVerificationEmail();
+//                            sendVerificationEmail();
 //                            user.sendEmailVerification();
                             Toast.makeText(SignInActivity.this, "Sign succesfully " + user.getEmail(), Toast.LENGTH_SHORT).show();
                         }else{

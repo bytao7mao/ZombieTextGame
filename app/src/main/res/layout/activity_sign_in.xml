@@ -55,21 +55,28 @@
         android:text="Sign In" />
 
     <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Create Account"
-    android:id="@+id/btnCreate"
-    android:layout_alignBottom="@+id/btnSignIn"
-    android:layout_toRightOf="@+id/textView2" />
+        android:id="@+id/btnSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSignIn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Sign Out" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:id="@+id/btnCreate"
+        android:layout_alignBottom="@+id/btnSignIn"
+        android:layout_toRightOf="@+id/btnSignIn" />
 
     <Button
         android:id="@+id/verify_email_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnSignOut"
+        android:layout_toRightOf="@+id/btnSignOut"
         android:layout_alignBottom="@+id/btnSignOut"
-        android:layout_alignLeft="@+id/btnCreate"
-        android:layout_alignStart="@+id/btnCreate"
         android:text="Verifiy e-mail" />
 
     <TextView
@@ -77,16 +84,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvSignInStatus"
-        android:layout_below="@+id/btnSignIn"
-        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnSignOut"
         android:layout_marginTop="15dp" />
 
-    <Button
-        android:id="@+id/btnSignOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tvSignInStatus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:text="Sign Out" />
 </RelativeLayout>
