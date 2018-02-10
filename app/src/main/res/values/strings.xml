@@ -4,6 +4,13 @@
         qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores
         et quas molestias excepturi sint, obcaecati cupiditate non-provident, similiq
         ue sunt in culpa.</string>
+
+    <!--Main activity buttons-->
+    <string name="new_game_button">New Game</string>
+    <string name="sale_button">Sale on Now!</string>
+    <string name="sign_up_login_in_button">Sign Up / Log In</string>
+    <string name="options_button">Options</string>
+
     <!--Options activity buttons-->
     <string name="music_selection_button">Music select</string>
     <string name="music_volume_button">Music volume</string>
