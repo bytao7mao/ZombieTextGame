@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/btnPromo"
         android:layout_gravity="center_horizontal"
-        android:padding="20dp"
+        android:padding="@dimen/activity_vertical_margin"
         android:textStyle="italic"
-        android:textSize="20sp"
+        android:textSize="@dimen/activity_main_text_view_text_size"
         android:text="@string/text_first_layout"
         android:textAlignment="center"
         android:id="@+id/textView7" />
@@ -27,7 +27,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/editTxt"
         android:background="@color/buttonBackground"
-        android:text="New Game"
+        android:text="@string/new_game_button"
         android:textColor="@color/colorAccent" />
 
     <Button
@@ -38,7 +38,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btnAuthActivity"
         android:background="@color/buttonBackground"
-        android:text="Options"
+        android:text="@string/options_button"
         android:textColor="@color/colorAccent" />
 
 
@@ -50,7 +50,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btnAuthActivity"
         android:background="@color/buttonBackground"
-        android:text="Sale on Now!"
+        android:text="@string/sale_button"
         android:textColor="@color/colorAccent"
         android:visibility="invisible" />
 
@@ -63,16 +63,18 @@
         android:layout_below="@+id/newGamebtn"
         android:background="@color/buttonBackground"
         android:gravity="center"
-        android:text="Sign Up / Log In"
+        android:text="@string/sign_up_login_in_button"
         android:textColor="@color/colorAccent" />
 
     <EditText
         android:id="@+id/editTxt"
         style="@style/Widget.AppCompat.EditText"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:minEms="7"
+        android:maxEms="10"
         android:textColor="@color/common_google_signin_btn_text_dark"
         android:gravity="center"
         android:hint="Your Name Here"
