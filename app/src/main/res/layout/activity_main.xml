@@ -3,21 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/activity_vertical_margin"
     android:background="@color/colorPrimary"
+    android:padding="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btnPromo"
         android:layout_gravity="center_horizontal"
         android:padding="@dimen/activity_vertical_margin"
-        android:textStyle="italic"
-        android:textSize="@dimen/activity_main_text_view_text_size"
         android:text="@string/text_first_layout"
         android:textAlignment="center"
-        android:id="@+id/textView7" />
+        android:textSize="@dimen/activity_main_text_view_text_size"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/newGamebtn"
@@ -73,10 +73,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:minEms="7"
-        android:maxEms="10"
-        android:textColor="@color/common_google_signin_btn_text_dark"
         android:gravity="center"
         android:hint="Your Name Here"
-        android:inputType="textCapWords" />
+        android:inputType="textCapWords"
+        android:maxEms="10"
+        android:minEms="7"
+        android:textColor="@color/common_google_signin_btn_text_dark" />
 </RelativeLayout>
