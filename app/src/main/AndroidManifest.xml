@@ -19,6 +19,7 @@
         <activity android:name=".PromoScreen" />
         <activity android:name=".SignInActivity"></activity>
         <activity android:name=".NewGame"></activity>
+        <activity android:name=".OptionsActivity"></activity>
 
     </application>
 

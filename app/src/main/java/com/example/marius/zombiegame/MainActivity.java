@@ -20,21 +20,19 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener {
-    private final String TAG = "FB_FIRSTLOOK";
     private static final String NAME = "name";
-    private EditText editTxt;
-    private TextView txtV;
-    String name;
+    private final String TAG = "FB_FIRSTLOOK";
     // Firebase Remote Config settings
     private final String CONFIG_PROMO_MESSAGE_KEY = "promo_message";
     private final String CONFIG_PROMO_ENABLED_KEY = "promo_enabled";
-    private long PROMO_CACHE_DURATION = 1800;
-
-    //Button startGame
-    Button startGame;
     // Firebase Analytics settings
     private final int MIN_SESSION_DURATION = 5000;
-
+    String name;
+    //Button startGame
+    Button startGame;
+    private EditText editTxt;
+    private TextView txtV;
+    private long PROMO_CACHE_DURATION = 1800;
     // TODO: define analytics object
     private FirebaseAnalytics mFBAnalytics;
 
@@ -47,8 +45,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         //start new game sending to NewGame intent
         editTxt = findViewById(R.id.editTxt);
         txtV = findViewById(R.id.userName);
@@ -58,6 +54,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 configureNextButton();
             }
+
             private void configureNextButton() {
                 name = editTxt.getText().toString();
                 if (TextUtils.isEmpty(name)) {
@@ -70,7 +67,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        mFBAnalytics=FirebaseAnalytics.getInstance(this);
+        mFBAnalytics = FirebaseAnalytics.getInstance(this);
         mFBConfig = FirebaseRemoteConfig.getInstance();
         mFBAnalytics.setMinimumSessionDuration(MIN_SESSION_DURATION);
         FirebaseRemoteConfigSettings configSettings = new
@@ -84,7 +81,7 @@ public class MainActivity extends AppCompatActivity
         mFBConfig.setDefaults(R.xml.firstlook_config_params);
 
         // set up button click handlers
-       // findViewById(R.id.newGamebtn).setOnClickListener(this);
+        // findViewById(R.id.newGamebtn).setOnClickListener(this);
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btnAuthActivity).setOnClickListener(this);
         findViewById(R.id.btnPromo).setOnClickListener(this);
@@ -97,7 +94,7 @@ public class MainActivity extends AppCompatActivity
         // If in developer mode cacheExpiration is set to 0 so each fetch will retrieve values from
         // the server.
         // TODO: Set the cache duration for developer testing
-        if (mFBConfig.getInfo().getConfigSettings().isDeveloperModeEnabled()){
+        if (mFBConfig.getInfo().getConfigSettings().isDeveloperModeEnabled()) {
             PROMO_CACHE_DURATION = 0;
         }
 
@@ -106,10 +103,10 @@ public class MainActivity extends AppCompatActivity
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Log.i(TAG, "Promo check was successful");
                             mFBConfig.activateFetched();
-                        }else{
+                        } else {
                             Log.e(TAG, "Promo check failed");
                         }
                         showPromoButton();
@@ -127,7 +124,7 @@ public class MainActivity extends AppCompatActivity
         showBtn = mFBConfig.getBoolean(CONFIG_PROMO_ENABLED_KEY);
         promoMsg = mFBConfig.getString(CONFIG_PROMO_MESSAGE_KEY);
 
-        Button btn = (Button)findViewById(R.id.btnPromo);
+        Button btn = (Button) findViewById(R.id.btnPromo);
         btn.setVisibility(showBtn ? View.VISIBLE : View.INVISIBLE);
         btn.setText(promoMsg);
     }
@@ -147,16 +144,17 @@ public class MainActivity extends AppCompatActivity
 //                break;
             case R.id.btn2:
                 btnName = "Button2Click";
-              //  setStatus("btn2 clicked");
+                //  setStatus("btn2 clicked");
+                startActivity(new Intent(this, OptionsActivity.class));
                 break;
             case R.id.btnAuthActivity:
                 btnName = "ButtonAuthClick";
-              //  setStatus("btnAuthActivity clicked");
+                //  setStatus("btnAuthActivity clicked");
                 startActivity(new Intent(this, SignInActivity.class));
                 break;
             case R.id.btnPromo:
                 btnName = "ButtonPromoClick";
-             //   setStatus("btnPromo clicked");
+                //   setStatus("btnPromo clicked");
                 startActivity(new Intent(this, PromoScreen.class));
                 break;
             default:
