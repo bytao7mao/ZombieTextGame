@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.marius.zombiegame.MageActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mage"/>
+
+    <TextView
+        android:id="@+id/showFirstText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        tools:text="showFirstText"/>
+    <TextView
+        android:id="@+id/flashingSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:layout_below="@id/showFirstText"
+        tools:text="flashingSleep"/>
+    <!--<blink xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:duration="5"-->
+        <!--android:repeatCount="5"-->
+        <!--android:layout_below="@id/showFirstText">-->
+    <!--<TextView-->
+        <!--android:id="@+id/flashingSleep"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingTop="30dp"-->
+        <!--tools:text="flashingSleep"/>-->
+    <!--</blink>-->
+
+</RelativeLayout>
