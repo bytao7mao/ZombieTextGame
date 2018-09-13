@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity
     //TODO
     //to refactor into ButterKnife
     @BindView(R.id.newGamebtn)Button startGame;
-    @BindView(R.id.editTxt)private EditText editTxt;
-    @BindView(R.id.userName)private TextView txtV;
+    @BindView(R.id.editTxt)EditText editTxt;
     private long PROMO_CACHE_DURATION = 1800;
     // TODO: define analytics object
     private FirebaseAnalytics mFBAnalytics;
