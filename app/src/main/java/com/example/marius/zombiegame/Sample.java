@@ -11,8 +11,6 @@ import java.util.Scanner;
 
 public class Sample {
     public static void main(String[] args) throws InterruptedException {
-
-
         Scanner sc = new Scanner(System.in);
 
         //Creating a list of arrays

@@ -7,21 +7,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Marius on 2/8/2018.
  */
 
 public class NewGame extends AppCompatActivity {
-    Button backButton, mageButton;
-    String name;
+    @BindView(R.id.backBtn)Button backButton;
+    @BindView(R.id.firstChoice)Button mageButton;
+    @BindView(R.id.userName)TextView txtV;
+    String name = "";
     private static final String NAME = "name";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
-
-        TextView txtV = findViewById(R.id.userName);
+        ButterKnife.bind(this);
         Bundle lastIntent = getIntent().getExtras();
         if(lastIntent != null){
             name = lastIntent.getString(NAME);
@@ -29,10 +32,8 @@ public class NewGame extends AppCompatActivity {
         txtV.setText(name);
         configureBackButton();
         configureMageOption();
-
     }
     private void configureMageOption(){
-        mageButton = findViewById(R.id.firstChoice);
         mageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +43,6 @@ public class NewGame extends AppCompatActivity {
         });
     }
     private void configureBackButton(){
-        backButton = findViewById(R.id.backBtn);
         backButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -50,5 +50,4 @@ public class NewGame extends AppCompatActivity {
             }
         });
     }
-
 }

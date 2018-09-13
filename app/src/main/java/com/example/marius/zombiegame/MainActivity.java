@@ -18,6 +18,9 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener {
     private static final String NAME = "name";
@@ -28,27 +31,22 @@ public class MainActivity extends AppCompatActivity
     // Firebase Analytics settings
     private final int MIN_SESSION_DURATION = 5000;
     String name;
-    //Button startGame
-    Button startGame;
-    private EditText editTxt;
-    private TextView txtV;
+    //TODO
+    //to refactor into ButterKnife
+    @BindView(R.id.newGamebtn)Button startGame;
+    @BindView(R.id.editTxt)private EditText editTxt;
+    @BindView(R.id.userName)private TextView txtV;
     private long PROMO_CACHE_DURATION = 1800;
     // TODO: define analytics object
     private FirebaseAnalytics mFBAnalytics;
-
     // TODO: define Remote Config object
     private FirebaseRemoteConfig mFBConfig;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ButterKnife.bind(this);
         //start new game sending to NewGame intent
-        editTxt = findViewById(R.id.editTxt);
-        txtV = findViewById(R.id.userName);
-        startGame = (Button) findViewById(R.id.newGamebtn);
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +64,6 @@ public class MainActivity extends AppCompatActivity
                 startActivity(i);
             }
         });
-
         mFBAnalytics = FirebaseAnalytics.getInstance(this);
         mFBConfig = FirebaseRemoteConfig.getInstance();
         mFBAnalytics.setMinimumSessionDuration(MIN_SESSION_DURATION);
@@ -75,7 +72,6 @@ public class MainActivity extends AppCompatActivity
                 .setDeveloperModeEnabled(BuildConfig.DEBUG)
                 .build();
         mFBConfig.setConfigSettings(configSettings);
-
 
         // TODO: Get the default parameter settings from the XML file
         mFBConfig.setDefaults(R.xml.firstlook_config_params);
@@ -89,7 +85,6 @@ public class MainActivity extends AppCompatActivity
         // Check to see if the promo button should be enabled
         checkPromoEnabled();
     }
-
     private void checkPromoEnabled() {
         // If in developer mode cacheExpiration is set to 0 so each fetch will retrieve values from
         // the server.
@@ -97,7 +92,6 @@ public class MainActivity extends AppCompatActivity
         if (mFBConfig.getInfo().getConfigSettings().isDeveloperModeEnabled()) {
             PROMO_CACHE_DURATION = 0;
         }
-
         // TODO: fetch the values from the Remote Config service
         mFBConfig.fetch(PROMO_CACHE_DURATION)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -113,22 +107,18 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
     }
-
     private void showPromoButton() {
         // Determine whether the show the promo button and what
         // the promo message should be to give to the user
         boolean showBtn = false;
         String promoMsg = "";
-
         // TODO: get the promo setting from Remote Config
         showBtn = mFBConfig.getBoolean(CONFIG_PROMO_ENABLED_KEY);
         promoMsg = mFBConfig.getString(CONFIG_PROMO_MESSAGE_KEY);
-
         Button btn = (Button) findViewById(R.id.btnPromo);
         btn.setVisibility(showBtn ? View.VISIBLE : View.INVISIBLE);
         btn.setText(promoMsg);
     }
-
     @Override
     public void onClick(View v) {
         // Create the Bundle that will hold the data sent to
@@ -136,7 +126,6 @@ public class MainActivity extends AppCompatActivity
         Bundle params = new Bundle();
         params.putInt("ButtonID", v.getId());
         String btnName;
-
         switch (v.getId()) {
 //            case R.id.newGamebtn:
 //                btnName = "Button1Click";
@@ -165,9 +154,7 @@ public class MainActivity extends AppCompatActivity
 
         // TODO: Log the button press as an analytics event
         mFBAnalytics.logEvent(btnName, params);
-
     }
-
 //    private void setStatus(String text) {
 //        TextView tvStat = (TextView)findViewById(R.id.tvStatus);
 //        tvStat.setText(text);

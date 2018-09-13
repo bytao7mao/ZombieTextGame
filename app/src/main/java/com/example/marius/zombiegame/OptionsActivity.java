@@ -9,12 +9,9 @@ import android.view.View;
  */
 
 public class OptionsActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
     }
-
-
 }

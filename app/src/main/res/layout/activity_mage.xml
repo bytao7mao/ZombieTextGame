@@ -37,5 +37,25 @@
         <!--android:paddingTop="30dp"-->
         <!--tools:text="flashingSleep"/>-->
     <!--</blink>-->
+    <TextView
+        android:id="@+id/chosing"
+        android:text="Choose your weapon!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_below="@id/flashingSleep"/>
+    <EditText
+        android:id="@+id/etChoiceWeapon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chosing"/>
+    <Button
+        android:id="@+id/sendToFightBtn"
+        android:text="pick!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
 
 </RelativeLayout>

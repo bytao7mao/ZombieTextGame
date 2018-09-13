@@ -26,14 +26,11 @@ import com.google.firebase.*;
 public class SignInActivity extends AppCompatActivity
         implements View.OnClickListener{
     private final String TAG = "FB_SIGNIN";
-
     // TODO: Add Auth members
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-
     private EditText etPass;
     private EditText etEmail;
-
     /**
      * Standard Activity lifecycle methods
      */
@@ -41,19 +38,14 @@ public class SignInActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-
         // Set up click handlers and view item references
         findViewById(R.id.btnCreate).setOnClickListener(this);
         findViewById(R.id.btnSignIn).setOnClickListener(this);
         findViewById(R.id.btnSignOut).setOnClickListener(this);
-
         etEmail = (EditText)findViewById(R.id.etEmailAddr);
         etPass = (EditText)findViewById(R.id.etPassword);
-
         // TODO: Get a reference to the Firebase auth object
         mAuth = FirebaseAuth.getInstance();
-
-
         // TODO: Attach a new AuthListener to detect sign in and out
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -66,7 +58,6 @@ public class SignInActivity extends AppCompatActivity
         };
         updateStatus();
     }
-
     /**
      * When the Activity starts and stops, the app needs to connect and
      * disconnect the AuthListener
@@ -77,7 +68,6 @@ public class SignInActivity extends AppCompatActivity
         // TODO: add the AuthListener
         mAuth.addAuthStateListener(mAuthListener);
     }
-
     @Override
     public void onStop() {
         super.onStop();
@@ -86,7 +76,6 @@ public class SignInActivity extends AppCompatActivity
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -104,7 +93,6 @@ public class SignInActivity extends AppCompatActivity
                 break;
         }
     }
-
     private boolean checkFormFields() {
         String email, password;
 
@@ -122,7 +110,6 @@ public class SignInActivity extends AppCompatActivity
 
         return true;
     }
-
     private void updateStatus() {
         TextView tvStat = (TextView)findViewById(R.id.tvSignInStatus);
         // TODO: get the current user
@@ -135,21 +122,16 @@ public class SignInActivity extends AppCompatActivity
         else {
             tvStat.setText("Signed Out");
         }
-
     }
-
     private void updateStatus(String stat) {
         TextView tvStat = (TextView)findViewById(R.id.tvSignInStatus);
         tvStat.setText(stat);
     }
-
     private void signUserIn() {
         if (!checkFormFields())
             return;
-
         String email = etEmail.getText().toString();
         String password = etPass.getText().toString();
-
         // TODO: sign the user in with email and password credentials
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -179,8 +161,6 @@ public class SignInActivity extends AppCompatActivity
                         }
                     }
                 });
-
-
     }
 
     private void signUserOut() {
@@ -190,14 +170,11 @@ public class SignInActivity extends AppCompatActivity
 
         updateStatus();
     }
-
     private void createUserAccount() {
         if (!checkFormFields())
             return;
-
         String email = etEmail.getText().toString();
         String password = etPass.getText().toString();
-
         // TODO: Create the user account
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -222,7 +199,6 @@ public class SignInActivity extends AppCompatActivity
                     }
                 });
     }
-
     public void sendVerificationEmail(){
         final FirebaseUser user = mAuth.getCurrentUser();
         if (user != null){
