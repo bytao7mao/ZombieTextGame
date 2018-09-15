@@ -7,4 +7,5 @@ package com.example.marius.zombiegame.Utils;
 public interface iDialogs {
      void underAttackStartPrompt();
      void fightZombieScene();
+     void askUserForAttack();
 }

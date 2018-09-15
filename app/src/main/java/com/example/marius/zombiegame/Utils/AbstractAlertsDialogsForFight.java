@@ -18,4 +18,9 @@ public abstract class AbstractAlertsDialogsForFight extends AppCompatActivity im
     @Override
     public void fightZombieScene() {
     }
+
+    @Override
+    public void askUserForAttack() {
+
+    }
 }

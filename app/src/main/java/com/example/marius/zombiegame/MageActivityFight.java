@@ -94,4 +94,21 @@ public class MageActivityFight
         builder.show();
     }
 
+    @Override
+    public void askUserForAttack() {
+        final EditText edtText = new EditText(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Prompt dialog demo !");
+        builder.setMessage("What is your name?");
+        builder.setCancelable(false);
+        builder.setView(edtText);
+        builder.setNeutralButton("Prompt", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "Hello " + edtText.getText() + " ! how are you?", Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.show();
+    }
+
 }
