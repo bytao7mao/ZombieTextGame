@@ -12,6 +12,13 @@
         android:layout_height="wrap_content"
         android:text="null"
         android:textSize="40sp"/>
+    <EditText
+        android:id="@+id/editTextReveal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:hint="enter text here"/>
 
 
 </RelativeLayout>
