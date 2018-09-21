@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.marius.zombiegame.MageActivityFight">
+
     <TextView
         android:id="@+id/weaponFight"
         android:layout_width="wrap_content"
@@ -19,6 +20,36 @@
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
         android:hint="enter text here"/>
+    <TextView
+        android:id="@+id/zombieHp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weaponFight"
+        android:text="hp"
+        android:textSize="24sp"
+        android:textColor="#0113af"/>
+
+    <Button
+        android:id="@+id/btnAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="attack!" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnAttack"
+        android:layout_margin="16dp">
+    <TextView
+        android:id="@+id/tvDmgFight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="30sp"
+        android:textColor="#ea0909"/>
+    </ScrollView>
 
 
 </RelativeLayout>

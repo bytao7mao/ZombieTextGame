@@ -20,9 +20,13 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener {
+
+
     private static final String NAME = "name";
     private final String TAG = "FB_FIRSTLOOK";
     // Firebase Remote Config settings
@@ -45,6 +49,15 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        //initialize realm database
+        Realm.init(this);
+        RealmConfiguration configuration =
+                new RealmConfiguration.Builder()
+                        .name("myDatabase.realm")
+                        .build();
+        Realm.setDefaultConfiguration(configuration);
+
+
         //start new game sending to NewGame intent
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override

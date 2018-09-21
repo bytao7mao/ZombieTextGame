@@ -1,24 +1,29 @@
 package com.example.marius.zombiegame;
 
+import android.app.FragmentManager;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.drawable.Animatable;
-import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.marius.zombiegame.Utils.AbstractAlertsDialogsForFight;
+import com.example.marius.zombiegame.Global.Variables;
+import com.example.marius.zombiegame.Utils.AsyncFragment;
 import com.example.marius.zombiegame.Utils.iDialogs;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.example.marius.zombiegame.Global.Variables.zombieHP;
+import static com.example.marius.zombiegame.Utils.AsyncFragment.asyncIntHp;
 
 /**
  * Created by taoLen on 9/13/2018.
@@ -26,7 +31,15 @@ import butterknife.ButterKnife;
 
 public class MageActivityFight
         extends AppCompatActivity
-        implements iDialogs {
+        implements iDialogs,AsyncFragment.ParentActivity {
+
+    private static final String FRAGMENT_TAG = AsyncFragment.class.getSimpleName();
+    //AsyncFragment
+    private AsyncFragment mFragment;
+
+    //global
+    private com.example.marius.zombiegame.Global.Variables appContext;
+    private int HpMonster = asyncIntHp;
 
     //Utils
     AlertDialog.Builder builder;
@@ -34,6 +47,10 @@ public class MageActivityFight
     //Binding views
     @BindView(R.id.weaponFight)TextView weaponFight;
     @BindView(R.id.editTextReveal)EditText editTextReveal;
+    @BindView(R.id.tvDmgFight)TextView tvDmgFight;
+    @BindView(R.id.scrollView)ScrollView mScroll;
+    @BindView(R.id.btnAttack)Button btnAttack;
+    @BindView(R.id.zombieHp)TextView zombieHp;
     //setting weapon
     String weapon = "";
     //starting activity
@@ -47,6 +64,18 @@ public class MageActivityFight
             weapon = bundle.getString("weapon");
         }
         weaponFight.setText(weapon);
+
+        appContext = (Variables) getApplicationContext();
+        appContext.setHPdisplay("Remaining HP: ");
+        String resultFromHp = appContext.getHPdisplay() + " "+ HpMonster;
+        zombieHp.setText(resultFromHp);
+        //linking fragment to activity
+        FragmentManager manager = getFragmentManager();
+        mFragment = (AsyncFragment) manager.findFragmentByTag(FRAGMENT_TAG);
+        if (mFragment==null){
+            mFragment = new AsyncFragment();
+            manager.beginTransaction().add(mFragment, FRAGMENT_TAG).commit();
+        }
 //        startMap();
         underAttackStartPrompt();
 
@@ -56,6 +85,31 @@ public class MageActivityFight
                 fightZombieScene();
             }
         },5000);
+
+        //TODO: to add async task with the damage done to zombie
+        btnAttack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onFightBtnClick();
+            }
+        });
+
+
+    }
+
+    public void displayDmgDone(String message){
+        tvDmgFight.append(message + "\n");
+        mScroll.scrollTo(0, mScroll.getBottom());
+    }
+
+    public void onFightBtnClick(){
+        mFragment.runAsyncTask("250", "500", "900");
+//        mFragment.runAsyncTask(String.valueOf(Variables.getZombieHP()));
+    }
+
+    @Override
+    public void handleTaskUpdate(String message) {
+        displayDmgDone(message);
     }
 
     @Override
@@ -111,4 +165,9 @@ public class MageActivityFight
         builder.show();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        appContext.setHPdisplay(zombieHp.getText().toString());
+    }
 }
