@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/weaponFight"
-        android:text="hp"
+        android:text="2000 HP"
         android:textSize="24sp"
         android:textColor="#0113af"/>
 
@@ -48,6 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:textSize="30sp"
+        android:text=""
         android:textColor="#ea0909"/>
     </ScrollView>
 

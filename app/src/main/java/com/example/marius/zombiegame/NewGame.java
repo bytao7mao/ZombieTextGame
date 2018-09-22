@@ -146,7 +146,7 @@ public class NewGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                addUserToRealm();
-                addUserToRealmAsync();
+//                addUserToRealmAsync();
                 Intent intent = new Intent(NewGame.this, MageActivity.class);
                 startActivity(intent);
             }
